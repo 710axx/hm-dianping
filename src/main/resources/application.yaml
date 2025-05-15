@@ -1,0 +1,30 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: hmdp
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://1.95.180.149:3306/hmdp?useSSL=false&serverTimezone=UTC
+    username: site
+    password: B107812y!
+    hikari:
+      max-lifetime: 1500000       # 25 分钟（比默认的 30 分钟略小）
+      idle-timeout: 600000        # 10 分钟（空闲多久回收）
+      keepalive-time: 300000      # 5 分钟（定期发送 ping，保持连接活跃）
+  redis:
+    host: 1.95.180.149
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 1
+        time-between-eviction-runs: 10s
+  jackson:
+    default-property-inclusion: non_null # JSON处理时忽略非空字段
+mybatis-plus:
+  type-aliases-package: com.hmdp.entity # 别名扫描包
+logging:
+  level:
+    com.hmdp: debug
