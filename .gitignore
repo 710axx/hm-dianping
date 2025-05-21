@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# 直接忽略整个log目录
+src/main/resources/nginx-1.18.0/logs/
