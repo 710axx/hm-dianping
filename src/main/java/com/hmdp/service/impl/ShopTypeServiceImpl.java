@@ -33,6 +33,7 @@ public class ShopTypeServiceImpl extends ServiceImpl<ShopTypeMapper, ShopType> i
 
     @Resource
     private StringRedisTemplate stringRedisTemplate;
+
     @Autowired
     private ShopTypeMapper shopTypeMapper;
 
